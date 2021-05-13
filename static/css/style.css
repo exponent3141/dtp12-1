@@ -3,10 +3,20 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color:rgb(132,232,255);
+  background:linear-gradient(90deg, rgba(132,232,255,1) 4%, rgba(6,127,182,1) 46%);
+  font-family: 'Roboto', sans-serif;
+
 }
 li {
   float: left;
+
+}
+
+ul li {
+
+font-family: 'Roboto', sans-serif;
+
 }
 li a {
   display: block;
@@ -14,7 +24,15 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-size: 23;
 }
 .active {
   background-color: #4CAF50;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+
+    background-image: linear-gradient(to right top, #0db4dd, #0094c8, #0075b0, #005795, #043a78);
+    background-repeat: no-repeat;
+    background-size: 500% 500%;
 }
