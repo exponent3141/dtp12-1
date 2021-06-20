@@ -1,17 +1,22 @@
-from flask import Flask, render_template, url_for
-from forms import SearchForm
+from flask import Flask, render_template, url_for, redirect
 
 import sqlite3
 app=Flask(__name__)
 app.config['SECRET_KEY'] = 'any secret string'
 
+
 @app.route('/')
+def homered():
+  return redirect("/home", code=302)
+
+
+@app.route('/home')
 def home():
   return render_template("home.html")
-
+ 
 @app.route('/opening')
 def opening():
-  conn = sqlite3.connect('choss.db')
+  conn = sqlite3.connect('chess attempt.db')
   cursor=conn.cursor()
   cursor.execute('SELECT * FROM Main_Openings')
   openings=cursor.fetchall()
@@ -19,10 +24,9 @@ def opening():
   print("hi")
   return render_template('pizza.html', pizza=openings)
 
-@app.context_processor
-def inject_search():
-  searchform = SearchForm()
-  return dict(searchform=searchform)
+@app.route('/about')
+def about():
+  return render_template("about.html")
 
 @app.route('/search', methods=['POST'])
 def search():
