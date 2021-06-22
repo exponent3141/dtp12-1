@@ -19,10 +19,13 @@ def home():
   return render_template("home.html")
 
 
+@app.route('/about')
 
+def about():
+    return render_template("about.html")
 @app.route('/opening')
 
-def pizza(id):
+def Explorer():
 
   conn = sqlite3.connect('chess_attempt.db')
 
@@ -30,11 +33,11 @@ def pizza(id):
 
   cursor.execute('SELECT * FROM Main_Openings')
 
-  pizza=cursor.fetchall()
+  cursoroutput=cursor.fetchall()
 
   conn.close()
 
-  return render_template('pizza.html', pizza=pizza)
+  return render_template('opening.html', openingss=cursoroutput)
 
 
 
