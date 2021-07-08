@@ -1,6 +1,32 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<p style="font-size:36px; color:white">Welcome to Mush Openings!</p>
-<button onclick = "" >Click here to start!</button>
+<style>
+  .button {
+    background-color: #FFFFFF; /* white */
+    border: none;
+    color: #0DB4DD;
+    padding-left: 100px;
+    padding-right: 100px;
+    top:50px;
+    vertical-align: middle;
+    height:95px;
+    margin:0 auto;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    cursor: pointer;
+    border-radius: 40px;
+  }
+
+
+
+</style>
+
+
+<p style="font-size:70px; color:white; text-align:center">Welcome to Mush Openings!</p>
+<button class= "button" onclick="window.location.href='/opening'">Click to start!</button>
 {% endblock %}
