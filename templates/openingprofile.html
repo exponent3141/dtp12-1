@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<style>
+h2 {
+  color:white;
+  font-size:55px;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 50px;
+}
+h3 {
+  color:white;
+  font-size:35px;
+  padding-left: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+p {
+  color:white;
+  font-size:24px;
+  padding-left: 50px;
+}
+
+</style>
+<h2 style = "color:white"> {{thingy[0][3]}}   </h2>
+<p >{{thingy[0][4]}}</p>
+<p>Move order: {{thingy[0][5]}} </p>
+<h2> Person most associated with this opening: </h2>
+<h3> {{thingy[0][1]}}</h3>
+<p> {{thingy[0][2]}}</p>
+<p>{{thingy[0][7]}} </p>
+{% endblock %}

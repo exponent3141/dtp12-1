@@ -54,25 +54,35 @@ def inject_search():
 
 
 
-@app.route('/search', methods=['POST'])
+@app.route('/opening/<string:openingname>')
+def openingsspecific(openingname):
+  conn = sqlite3.connect('wack.db')
 
-def search():
+  cursor=conn.cursor()
 
-  if request.method =='POST':
+  cursor.execute('''
+SELECT
+  p.id,
+  p.name,
+  p.description,
+  mo.name,
+  mo.description,
+  mo.moves,
+  mo.fen,
+  OI.info_text
+FROM
+  Opening_Info OI
+  INNER JOIN Main_Openings mo ON mo.id = OI.oid
+  INNER JOIN Person p ON p.id = OI.pid
+WHERE
+  OI.id =
+  '''+openingname+';')
 
-    conn = sqlite3.connect('pizza.db')
+  cursoroutput2=cursor.fetchall()
 
-    cursor=conn.cursor()
-
-    c.executemany('''select * from Pizza where name = %s''', request.form['search'])
-
-    results = 'SELECT * FROM Pizza'
-
-    return render_template("results.html", records=c.fetchall())
-
-  return render_template('search.html')
-
-
+  conn.close()
+  return render_template('openingprofile.html', thingy=cursoroutput2)
+  
 
 if __name__ == "__main__":
 
