@@ -4,6 +4,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link href="https://c2a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.vers1.css" media="all" rel="stylesheet" crossorigin>
+<script defer language="javascript" src="https://c1a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.bundle.vers1.js" crossorigin></script>
+
+<link
+href="https://c1a.chesstempo.com/fonts/MaterialIcons-Regular.woff2"
+rel="stylesheet" crossorigin>
 </head>
 <style>
 h2 {
@@ -32,4 +38,8 @@ p {
 <h3> {{thingy[0][1]}}</h3>
 <p> {{thingy[0][2]}}</p>
 <p>{{thingy[0][7]}} </p>
+
+<ct-pgn-viewer>
+  {{thingy[0][6]}}
+</ct-pgn-viewer>
 {% endblock %}

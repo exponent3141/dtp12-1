@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, url_for
 
 from forms import SearchForm
@@ -69,7 +68,7 @@ SELECT
   mo.name,
   mo.description,
   mo.moves,
-  mo.fen,
+  mo.IFRAMELINK,
   OI.info_text
 FROM
   Opening_Info OI
@@ -88,8 +87,6 @@ WHERE
 if __name__ == "__main__":
 
   app.run(debug=True)
-=======
-from flask import Flask, render_template, url_for, redirect
 
 import sqlite3
 app=Flask(__name__)
@@ -131,4 +128,3 @@ def search():
 
 if __name__ == "__main__":
   app.run()
->>>>>>> 7dba459709162d693a0a7fad79166b55e17665e4
