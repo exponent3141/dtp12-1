@@ -1,0 +1,6 @@
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/news">About</a>
+  <a href="/opening">Explorer</a>
+  <a class="active" href="/search">Search</a>
+</div>

@@ -1,0 +1,99 @@
+
+{% extends 'layout.html' %}
+{% block content %}
+
+
+
+  <head>
+    <style>
+      .button {
+        background-color: #FFFFFF; /* white */
+        border: none;
+        color: #0DB4DD;
+        padding-left: 100px;
+        padding-right: 100px;
+        top:50px;
+        vertical-align: middle;
+        height:95px;
+        margin:0 auto;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-weight:bold;
+        cursor: pointer;
+        border-radius: 40px;
+        margin-top:150px
+      }
+      *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 62,5%;
+}
+
+
+.form__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 30%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+
+  vertical-align: middle;
+  margin-top:50px
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+    </style>
+    <title>Flask Intro - login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+
+      <br>
+
+      <form action="" method="post">
+        <input  type="text" style = "margin-top:150px"class="form__input" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+
+         <input type="password" class="form__input"  placeholder="Password" name="password" value="{{
+          request.form.password }}">
+          {% if error %}
+            <p class="error" style = "color:white;  margin-top:5px; text-align: center; font-size:30px"><strong>Error:</strong> {{ error }}
+          {% endif %}
+        <input class="button" type="submit" value="Login">
+      </form>
+
+    </div>
+  </body>
+
+
+{% endblock %}
