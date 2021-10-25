@@ -42,7 +42,7 @@ def before_request():
 
     # Check if the user is logged in (has a valid session)
     if 'user_id' in session:
-        try:j
+        try:
             # Get the user with the session id given
             user = [x for x in users if x.id == session['user_id']][0]
             g.user = user
